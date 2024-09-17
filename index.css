@@ -38,7 +38,7 @@ body {
     user-select: none;
 }
 
-.header, .footer, .cta, .nav-link {
+.header, .footer, .cta, .nav-link, .Abutton {
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -182,6 +182,90 @@ nav ul li a:hover {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.notification {
+    position: fixed;
+    top: 0;
+    right: -30%; /* 初始位置在屏幕右侧外部 */
+    height: 100%;
+    width: 30%;
+    background: #f9f9f9;
+    border-left: 1px solid #ccc;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    padding: 20px;
+    transition: right 0.3s; /* 平滑过渡动画 */
+    overflow-y: auto; /* 如果内容过多，允许滚动 */
+    z-index: 1000; /* 确保通知框在其他元素之上 */
+    display:none;
+}
+
+.notification.show {
+    right: 0; /* 滑入屏幕 */
+}
+
+.notification .scrollable-area {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll; /* 显示垂直滚动条 */
+}
+
+.Abutton { 
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.Abutton:hover{
+    background-color:#0078d7;
+}
+
+#toggleNotification {
+    /*position: fixed;*/
+    /*top: 20px;*/
+    /*right: 20px;*/
+}
+
+#closeNotification {
+    position: absolute;
+    /*top: 8%;*/
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 24px;
+    line-height: 20px;
+    cursor: pointer;
+    background: transparent;
+    color: #333;
+    border: none;
+    outline: none;
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
 }
 
 footer {

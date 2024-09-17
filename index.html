@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -16,10 +16,101 @@
                 <li><a href="#portfolio" class="nav-link" id="zp">人员</a></li>
                 <li><a id="theme-toggle" class="nav-link">夜间模式</a></li>
                 <li><a href="#contact" class="nav-link" id="lx">联系我们</a></li>
+                <!--<li><button class="Abutton" id="toggleNotification">&#128276;</button></li>-->
+                <li><a class="Abutton nav-link" id="toggleNotification">&#128276;</a></li>
+                
             </ul>
         </nav>
     </header>
     <div class="container">
+        <div class="notification" id="notification" style="text-align:center">
+            <div class="scrollable-area">
+                <h2><button style="display: inline-block;transform: scaleX(1.5);" id="closeNotification">&gt;<div style="font-size:5px;transform: scaleX(0.5);">收起</div></button>dece工作室通知</h2><br>
+                <hr>
+                <h3>2024年</h3>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">6月1号晚上</div>
+                        <p class="card-text">
+                            codeiq工作室(<a style="text-decoration: none;" class="safeLink" href="https://code.xueersi.com/space/78931245">该室长传送门~</a>)成为我们工作室旗下（旗下的旗下/汗）
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">2月27号晚上</div>
+                        <p class="card-text">
+                            工作室由deqecraft更名为dece，网址也由deqecraft.github.io更为dece.czoffice.top，官网连夜更新，新logo还在画
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">2月23日</div>
+                        <p class="card-text">
+                            工作室<a style="text-decoration: none;" class="safeLink" href="https://code.xueersi.com/home/project/detail?lang=code&pid=51615282&version=webpy&form=webpy&langType=webpy">裁员</a>本次裁员主要针对截止至今天不发工作室作品，很少发工作室作品且高质量作品少的人
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">2月6号下午</div>
+                        <p class="card-text">
+                            由室长<a style="text-decoration: none;" class="safeLink" href="https://code.xueersi.com/space/8582930">陈溯</a>和副室长<a style="text-decoration: none;" href="https://code.xueersi.com/space/62351545" class="safeLink">尹鹏皓</a>共同开发官网。此前由室长<a style="text-decoration: none;" class="safeLink" href="https://code.xueersi.com/space/8582930">陈溯</a>单独开发
+                        </p>
+                    </div>
+                </div>
+                <h4>2023年</h4>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">11月14号</div>
+                        <p class="card-text">
+                            deqecraft工作室换新logo
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">11月11号</div>
+                        <p class="card-text">
+                            deqecraft工作室转CZ工作室旗下
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">10月18号</div>
+                        <p class="card-text">
+                            deqecraft工作室建泡泡群
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">10月15号</div>
+                        <p class="card-text">
+                            deqecraft工作室建qq群
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">10月7号</div>
+                        <p class="card-text">
+                            deqecraft官网初步完善
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-title">10月5号</div>
+                        <p class="card-text">
+                            dece工作室成立
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <section id="home" class="section hero active">
             <div class="content">
                 <br>
@@ -32,6 +123,7 @@
             <div class="content">
                 <h2>资讯</h2>
                 <p>感谢开发人员  ：章宝瑞</p>
+                <p>感谢跟新人员： 陈溯</p>               
             </div>
         </section>
         <section id="services" class="section">
@@ -77,9 +169,28 @@
               </div>
         </section>
     </div>
+    <script>
+        const toggleButton = document.getElementById('toggleNotification');
+        const closeButton = document.getElementById('closeNotification');
+        const notification = document.getElementById('notification');
+    
+        toggleButton.addEventListener('click', function() {
+            notification.style.display = 'block';
+            setTimeout(function() {
+                notification.classList.toggle('show');
+            }, 50);
+        });
+    
+        closeButton.addEventListener('click', function() {
+            notification.classList.remove('show');
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 300);
+        });
+    </script>
     <footer>
         <p>&copy; 2024 夏洛克侦探社. 版权所有.</p>
-        <p>&copy; 2024 thinkoffice<p>
+        <p>&copy; 2024 thinkoffice,deceworkroom<p>
     </footer>
     <script src="index.js"></script>
 </body>

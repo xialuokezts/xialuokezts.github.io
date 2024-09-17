@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
     const themeToggle = document.getElementById('theme-toggle');
     
-    // let navbarTimeout; // 注释掉导航栏定时器变量
+    let navbarTimeout; // 注释掉导航栏定时器变量
 
     // Simulate loading delay
     setTimeout(() => {
         loader.style.display = 'none';
         container.style.display = 'block';
-        // resetNavbarTimeout(); // 注释掉自动隐藏导航栏的定时器
+        resetNavbarTimeout(); // 注释掉自动隐藏导航栏的定时器
     }, 3000);
 
     // Smooth scroll to section on nav-link click
@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
             smoothScroll(targetSection);
 
             // Shrink navbar
-            // header.style.transform = 'translateY(-100%)'; // 注释掉导航栏收起代码
+            header.style.transform = 'translateY(-100%)'; // 注释掉导航栏收起代码
 
             // Reset navbar auto-hide timer
-            // resetNavbarTimeout(); // 注释掉自动隐藏导航栏的定时器
+            resetNavbarTimeout(); // 注释掉自动隐藏导航栏的定时器
         });
     });
 
@@ -46,12 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Reset navbar auto-hide timer
-    // function resetNavbarTimeout() {
-    //     clearTimeout(navbarTimeout);
-    //     navbarTimeout = setTimeout(() => {
-    //         header.style.transform = 'translateY(-100%)';
-    //     }, 1500);
-    // }
+    function resetNavbarTimeout() {
+        clearTimeout(navbarTimeout);
+        navbarTimeout = setTimeout(() => {
+            header.style.transform = 'translateY(-100%)';
+        }, 1500);
+    }
 
     // Smoothly shrink navbar on scroll down and restore on scroll up
     let lastScrollTop = 0;
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Manage header transition
                 const currentScroll = window.scrollY;
                 if (currentScroll > lastScrollTop) {
-                    // header.style.transform = 'translateY(-100%)'; // 注释掉导航栏收起代码
+                    header.style.transform = 'translateY(-100%)'; // 注释掉导航栏收起代码
                 } else {
                     header.style.transform = 'translateY(0)';
                 }
@@ -87,20 +87,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 ticking = false;
 
                 // Reset navbar auto-hide timer on scroll
-                // resetNavbarTimeout(); // 注释掉自动隐藏导航栏的定时器
+                resetNavbarTimeout(); // 注释掉自动隐藏导航栏的定时器
             });
             ticking = true;
         }
     });
 
     // Initialize auto-hide timer
-    // resetNavbarTimeout(); // 注释掉自动隐藏导航栏的定时器
+    resetNavbarTimeout(); // 注释掉自动隐藏导航栏的定时器
 
     // Reset navbar auto-hide timer on user interaction
     ['mousemove', 'keypress', 'touchstart'].forEach(event => {
         document.addEventListener(event, () => {
             header.style.transform = 'translateY(0)';
-            // resetNavbarTimeout(); // 注释掉自动隐藏导航栏的定时器
+            resetNavbarTimeout(); // 注释掉自动隐藏导航栏的定时器
         });
     });
 
